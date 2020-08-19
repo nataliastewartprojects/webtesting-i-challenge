@@ -5,12 +5,22 @@ module.exports = {
   get,
 };
 
-function success(item) {
-  return { ...item };
+function success(a, b) {
+  return a * b;
 }
 
-function fail(item) {
-  return { ...item };
+function fail(e, d) {
+  // if (e >= 15) {
+  //   d = d - 10;
+  // } else if (e > 16) {
+  //   d = d - 1;
+  // } else if (e < 15) {
+  //   d = d - 5;
+  // } else {
+  //   null;
+  // }
+
+  return e - d;
 }
 
 function repair(a, b) {

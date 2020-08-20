@@ -9,18 +9,16 @@ function success(a, b) {
   return a * b;
 }
 
-function fail(e, d) {
-  // if (e >= 15) {
-  //   d = d - 10;
-  // } else if (e > 16) {
-  //   d = d - 1;
-  // } else if (e < 15) {
-  //   d = d - 5;
-  // } else {
-  //   null;
-  // }
-
-  return e - d;
+function fail(item) {
+  if (item.durability < 5) {
+    return item;
+  } else if (item.enhancement < 15) {
+    return { ...item, durability: item.durability - 5 };
+  } else if (item.enhancement <= 16) {
+    return { ...item, durability: item.durability - 10 };
+  } else {
+    return { ...item, enhancement: item.enhancement - 1 };
+  }
 }
 
 function repair(a, b) {

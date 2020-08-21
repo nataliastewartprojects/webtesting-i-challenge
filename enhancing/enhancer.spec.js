@@ -8,8 +8,16 @@ const { success, fail, repair } = require("./enhancer.js");
 
 //----- repair() test
 describe("repair()", () => {
+  // it("returns a new item with the durability restored to 100", () => {
+  //   expect(repair(50, 50)).toBe(100);
+  // });
   it("returns a new item with the durability restored to 100", () => {
-    expect(repair(50, 50)).toBe(100);
+    const item = {
+      durability: 100,
+    };
+    const newItem = repair(item);
+
+    expect(newItem.durability).toBe(100);
   });
 });
 
@@ -21,12 +29,17 @@ describe("repair()", () => {
 //------success()
 describe("success()", () => {
   it("returns a new item enhancement that increases by 1", () => {
-    expect(success(10, 2)).toBe(20);
+    const item = {
+      enhancement: 10,
+    };
+    const newItem = success(item);
+
+    expect(newItem).toBe(11);
   });
 
-  it("The durability of the item is not changed.", () => {
-    expect(success(100, 1)).toStrictEqual(100);
-  });
+  // it("The durability of the item is not changed.", () => {
+  //   expect(success(100, 1)).toStrictEqual(100);
+  // });
 });
 
 // When enhancement fails

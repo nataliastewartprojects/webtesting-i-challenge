@@ -5,8 +5,14 @@ module.exports = {
   get,
 };
 
-function success(a, b) {
-  return a * b;
+function success(item) {
+  if (item.enhancement <= 19) {
+    return item.enhancement + 1;
+  } else if ((item.enhancement = 20)) {
+    return item;
+  } else {
+    null;
+  }
 }
 
 function fail(item) {
@@ -21,8 +27,8 @@ function fail(item) {
   }
 }
 
-function repair(a, b) {
-  return a + b;
+function repair(item) {
+  return item;
 }
 
 function get(item) {

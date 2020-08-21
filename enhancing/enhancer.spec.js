@@ -37,9 +37,14 @@ describe("success()", () => {
     expect(newItem).toBe(11);
   });
 
-  // it("The durability of the item is not changed.", () => {
-  //   expect(success(100, 1)).toStrictEqual(100);
-  // });
+  it("If the item enhancement level is 20, the enhancement level is not changed.", () => {
+    const item = {
+      enhancement: 20,
+    };
+    const newItem = success(item);
+
+    expect(newItem).toBe(20);
+  });
 });
 
 // When enhancement fails

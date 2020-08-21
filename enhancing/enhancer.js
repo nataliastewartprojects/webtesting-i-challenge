@@ -9,7 +9,7 @@ function success(item) {
   if (item.enhancement <= 19) {
     return item.enhancement + 1;
   } else if ((item.enhancement = 20)) {
-    return item;
+    return item.enhancement;
   } else {
     null;
   }
